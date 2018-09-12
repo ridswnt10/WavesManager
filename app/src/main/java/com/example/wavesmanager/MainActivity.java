@@ -13,9 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    Switch Voting_status=findViewById(R.id.Voting_status);
+    TextView Voting_text=findViewById(R.id.Voting_text);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +37,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Voting_status.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Voting_text.setText("Voting Status: Open");
+                    Toast.makeText(MainActivity.this, "The Voting is Open", Toast.LENGTH_SHORT).show();
+                } else {
+                    Voting_text.setText("Voting Status: Close");
+                    Toast.makeText(MainActivity.this, "The voting is Closed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
+
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -72,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.voting) {
-            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-            startActivity(intent);
+            /*Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);*/
             // Handle the camera action
         } else if (id == R.id.results) {
 

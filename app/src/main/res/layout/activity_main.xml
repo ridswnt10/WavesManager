@@ -8,6 +8,32 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voting Status:Open"
+            android:textSize="30sp"
+            android:layout_marginTop="100dp"
+            android:layout_alignParentTop="true"
+            android:textAlignment="center"
+            android:id="@+id/Voting_text"/>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Voting_status"
+            android:checked="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:textOff="Closed"
+            android:textOn="Open"/>
+
+
+    </RelativeLayout>
+
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"

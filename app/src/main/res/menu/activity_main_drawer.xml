@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Voting">
+            <item
+                android:id="@+id/voting"
+                android:icon="@drawable/voting"
+                android:title="Voting Status" />
+            <item
+                android:id="@+id/results"
+                android:icon="@drawable/result"
+                android:title="Results" />
+            <item
+                android:id="@+id/winner"
+                android:icon="@drawable/winner"
+                android:title="Winners" />
+            <item
+                android:id="@+id/event_live"
+                android:icon="@drawable/winner"
+                android:title="Event Live" />
+            <item
+                android:id="@+id/schedule"
+                android:icon="@drawable/winner"
+                android:title="Schedule" />
+        </item>
+
+    </group>
+
+
+</menu>
